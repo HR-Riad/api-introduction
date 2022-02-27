@@ -14,7 +14,7 @@ function loadPosts() {
         .then(res => res.json())
         .then(data => console.log(data));
 }
-loadPosts();
+// loadPosts();
 
 
 function displayUsers(data) {
@@ -26,4 +26,4 @@ function displayUsers(data) {
         li.innerText = `name: ${user.name} email: ${user.email}`;
         ul.appendChild(li);
     }
-}
+}   
