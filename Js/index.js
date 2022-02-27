@@ -1,28 +1,23 @@
-function loadData() {
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-        .then(response => response.json())
-        .then(data => console.log(data))
-}
+// JavaScript Object Notation
+// JSON
+const user = { id: 11, name: 'Gorib Amir', job: 'actor' };
+const stringified = JSON.stringify(user);
+// console.log(user);
+// console.log(stringified);
 
-function loadUsers() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(data => displayUsers(data));
-}
-
-function loadPosts() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(res => res.json())
-        .then(data => console.log(data));
-}
-
-function displayUsers(data) {
-    const ul = document.getElementById('users');
-    // console.log(data);
-    for (const user of data) {
-        console.log(user);
-        const li = document.createElement('li');
-        li.innerText = `name: ${user.name} email: ${user.email}`;
-        ul.appendChild(li);
-    }
-}
+const shop = {
+    name: 'Alia Store',
+    address: 'Ranbir road',
+    profit: 15000,
+    products: ['laptop', 'mobile', 'pepsi'],
+    owner: {
+        name: 'Alia Bhatt',
+        profession: 'actor'
+    },
+    isExpensive: false
+};
+const shopStringified = JSON.stringify(shop);
+// console.log(shop);
+console.log(shopStringified);
+const converted = JSON.parse(shopStringified);
+console.log(converted.owner);
